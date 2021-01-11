@@ -54,7 +54,7 @@ export default function PopularSeries() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl">In Cinema</h2>
+        <h2 className=" text-2xl">Popular Cinema</h2>
         <div>
           <CarouselDynamic
           plugins={[

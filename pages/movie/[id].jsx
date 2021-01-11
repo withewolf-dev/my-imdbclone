@@ -36,47 +36,37 @@ import {
   
      const movieDetails = `https://api.themoviedb.org/3/movie/${Id}?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US`
      const trailer = `https://api.themoviedb.org/3/movie/${Id}/videos?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US`
-     const fullCast = `https://api.themoviedb.org/3/movie/${Id}/credits?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US`
-  
-     const ReqMovieDetails = axios.get(movieDetails)
-     const ReqTrailer = axios.get(trailer)
-     const ReqFullCast = axios.get(fullCast)
+     const credits = `https://api.themoviedb.org/3/movie/${Id}/credits?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US`
   
   
-     useEffect(() => {
-       
-      axios.all([ReqMovieDetails,ReqTrailer,ReqFullCast]).then(
-        axios.spread((...response)=>{
+  
+
+    useEffect(()=>{
+
+      const MovieData = async()=>{
+        try{
+          const MovieResp = await axios.get(movieDetails)
+          setMovieDetails(MovieResp.data)
+
+          const TrailerResp = await axios.get(trailer)
+          console.log(TrailerResp.data);
+          setTrailer(TrailerResp.data && TrailerResp.data.results.filter((result)=> result.type === "Trailer").slice(0,1))
+
+          const CreditResp = await axios.get(credits)
+          setfullCast(CreditResp.data && CreditResp.data.cast.slice(0,15))
+
+        } catch(error){
           
-          const respTrailer = response[1];
-          const respMovieDetails = response[0];
-          const respFullCast = response[2]
-  
-          console.log(respTrailer && respTrailer.data,"trailer",respMovieDetails && respMovieDetails.data,"details", respFullCast && respFullCast.data,"cast");
-  
-  
-          setTrailer((respTrailer && respTrailer.data.results.filter((result)=> result.type === "Trailer").slice(0,1)))
-  
-           setfullCast(respFullCast && respFullCast.data.cast.slice(0,15))
-  
-          // setCrew(respFullCast && respFullCast.data.crew.filter((result)=>result.job === "Director"))
-  
-           setMovieDetails(respMovieDetails && respMovieDetails.data)
-  
-  
-        })
-      ).catch(error=>{
-        console.log(error);
-      })
-  
-      
-     }, [Id])
-  
+          console.log(error);
+        }
+      }
+      MovieData()
+    },[])
   
      
       //console.log(FullCast);
     //  console.log(Crew);
-     console.log(MovieDetails);
+     //console.log(MovieDetails,"new");
   
     const handleExpandClick = () => {
       setExpanded(!expanded);

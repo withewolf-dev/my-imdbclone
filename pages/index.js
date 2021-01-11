@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <>  
     <div className=" bg-gray-300 h-full py-2">
-      {/* <Trailer/>
+      <Trailer/>
       <InCinema/>
-      <PopularSeries/> */}
-      <h1>this is cinema</h1>
+      {/* <PopularSeries/> */}
+      {/* <h1>this is cinema</h1> */}
     </div>
     </>
   );

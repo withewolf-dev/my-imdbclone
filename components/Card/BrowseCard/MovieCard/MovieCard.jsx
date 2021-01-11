@@ -1,7 +1,7 @@
 import React from "react";
 import Router from "next/router";
 
-export default function MovieCard({ Image, Title, Id, Rating }) {
+export default function  MovieCard({ Image, Title, Id, Rating }) {
   console.log(Image, Title);
 
  
@@ -15,7 +15,7 @@ export default function MovieCard({ Image, Title, Id, Rating }) {
 
   return (
     <>
-      <div onClick={()=>Router.push(`/movie/${Id}`)}>
+      <div key={Id} onClick={()=>Router.push(`/movie/${Id}`)}>
                 <div className="bg-gray-400 h-96 w-48 py-4">
                     <div className="p-1 bg-gray-600">
                         <img
