@@ -46,9 +46,19 @@ export default function InCinema() {
             },
           ]}
           >
-              {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
+              {/* {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
                 <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
-              ))}
+              ))} */}
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+
           </CarouselDynamic>
         </div>
       </div>
@@ -70,9 +80,19 @@ export default function InCinema() {
             },
           ]}
           >
-              {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
+              {/* {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
                 <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
-              ))}
+              ))} */}
+
+<img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
           </CarouselDynamic>
         </div>
       </div>
