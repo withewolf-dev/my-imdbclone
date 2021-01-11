@@ -14,7 +14,7 @@ export default function Home() {
     <>  
     <div className=" bg-gray-300 h-full py-2">
       <Trailer/>
-      <InCinema/>
+      {/* <InCinema/> */}
       {/* <PopularSeries/> */}
       {/* <h1>this is cinema</h1> */}
     </div>
