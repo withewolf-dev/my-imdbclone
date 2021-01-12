@@ -46,19 +46,20 @@ import {
       const MovieData = async()=>{
         try{
           const MovieResp = await axios.get(movieDetails)
-          setMovieDetails(MovieResp.data)
 
           const TrailerResp = await axios.get(trailer)
-          console.log(TrailerResp.data);
-          setTrailer(TrailerResp.data && TrailerResp.data.results.filter((result)=> result.type === "Trailer").slice(0,1))
 
           const CreditResp = await axios.get(credits)
+
+          setMovieDetails(MovieResp.data)
+          setTrailer(TrailerResp.data && TrailerResp.data.results.filter((result)=> result.type === "Trailer").slice(0,1))
           setfullCast(CreditResp.data && CreditResp.data.cast.slice(0,15))
 
         } catch(error){
           
           console.log(error);
         }
+        
       }
       MovieData()
     },[])

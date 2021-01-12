@@ -4,7 +4,9 @@ import Router from "next/router";
 export default function  MovieCard({ Image, Title, Id, Rating }) {
   console.log(Image, Title);
 
- 
+  
+
+
   const truncateString=(str, num)=> {
     if (str.length <= num) {
       return str

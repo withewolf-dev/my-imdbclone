@@ -14,20 +14,25 @@ const CarouselDynamic = dynamic(() => import("@brainhubeu/react-carousel"), {
 export default function InCinema() {
 
 
-  const [PopularMovies, setPopularMovies] = useState()
-  const [disableFetching, setdisableFetching] = useState()
+  const [PopularMovies, setPopularMovies] = useState([])
+  const [init, setInit] = useState(false)
   
   useEffect(() => {
-      axios
+      if (!init) {
+        axios
         .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=887fe191590495414ef3ba59578e4a8b&language=en-us&page=1`)
-        .then((value) => {console.log(value.data.results); setPopularMovies(value.data && value.data.results)})
+        .then((value) => {
+          value.data && setPopularMovies([...value.data.results])
+          setInit(true)
+         })
         .catch((error) => {
           console.log(error);
         });
         
-    }, []);
+      }
+    });
 
-    console.log(PopularMovies);
+    console.log(PopularMovies,"popmov");
 
   return (
     <>
@@ -35,31 +40,24 @@ export default function InCinema() {
       <div className="px-2 lg:hidden">
         <h2 className=" text-2xl">In Cinema</h2>
         <div>
-          <CarouselDynamic
+
+          {PopularMovies && <CarouselDynamic
           plugins={[
             'infinite',
             {
-              resolve: slidesToShowPlugin,
+              resolve: slidesToShowPlugin, 
               options: {
                numberOfSlides: 2
               }
             },
           ]}
           >
-              {/* {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
-              ))} */}
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
+              {PopularMovies.slice(0,10).map((item)=>(
+                <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
+              ))}
+              
 
-          </CarouselDynamic>
+          </CarouselDynamic>}
         </div>
       </div>
 
@@ -69,7 +67,9 @@ export default function InCinema() {
       <div className="px-2">
         <h2 className=" text-2xl">In Cinema</h2>
         <div>
-          <CarouselDynamic
+
+         
+          {PopularMovies && <CarouselDynamic
           plugins={[
             'infinite',
             {
@@ -80,20 +80,12 @@ export default function InCinema() {
             },
           ]}
           >
-              {/* {PopularMovies && PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
-              ))} */}
-
-<img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-              <img src="https://images.unsplash.com/photo-1610297118719-df38dccdbde1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="sad"/>
-          </CarouselDynamic>
+              {PopularMovies.slice(0,10).map((item)=>(
+                <MovieCard key={item.id} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
+              ))
+              }
+      
+          </CarouselDynamic>}
         </div>
       </div>
       </div>
