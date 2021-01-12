@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { slidesToShowPlugin } from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+
 import axios from "axios";
-import dynamic from "next/dynamic";
 import MovieCard from "../../../components/Card/BrowseCard/MovieCard/MovieCard";
 
 
 
-const CarouselDynamic = dynamic(() => import("@brainhubeu/react-carousel"), {
-  ssr: false,
-});
 
 export default function InCinema() {
 
