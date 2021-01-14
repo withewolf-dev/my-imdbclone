@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Router from "next/router";
 import Paper from '@material-ui/core/Paper';
 import SeriesDialog from '../../../Dialog/SeriesDialog/SeriesDialog';
 import { Dialog } from '@material-ui/core';
@@ -26,7 +25,6 @@ export default function SeriesCard({ Image, Title, Id, Rating }) {
 
     return (
         <>
-         {/* <div onClick={()=>Router.push(`/series/${Id}`)}> */}
          <div key={Id} onClick={handleClickOpen}>
 
              <div className="p-2">
@@ -47,9 +45,9 @@ export default function SeriesCard({ Image, Title, Id, Rating }) {
                 </div>
             </div>
 
-            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+            <Dialog  fullWidth="true" maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         
-        <SeriesDialog handleClose={handleClose}  />
+        <SeriesDialog handleClose={handleClose} Id={Id}  />
       </Dialog>
         </>
     )
