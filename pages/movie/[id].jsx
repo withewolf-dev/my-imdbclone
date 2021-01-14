@@ -104,7 +104,6 @@ import {
           </div>
             
           <div className="flex space-x-3">
-            <p> {MovieDetails && MovieDetails.runtime} min</p>
             <Divider orientation="vertical" flexItem />
             {MovieDetails && MovieDetails.genres.map((genre)=>(
               <p className="text-sm">{genre.name}</p>

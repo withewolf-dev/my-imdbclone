@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "@brainhubeu/react-carousel/lib/style.css";
 import axios from "axios";
 import SeriesCard from "../../Card/BrowseCard/SeriesCard/SeriesCard";
-
-
+import Carousel from '../../../utils/Carousel'
 
 
 
@@ -28,21 +26,11 @@ export default function PopularSeries() {
       <div className="px-2 lg:hidden">
         <h2 className=" text-2xl">Popular Series</h2>
         <div>
-          <CarouselDynamic
-          plugins={[
-            'infinite',
-            {
-              resolve: slidesToShowPlugin,
-              options: {
-               numberOfSlides: 2
-              }
-            },
-          ]}
-          >
+          <Carousel>
               {PopularSeries && PopularSeries.map((item)=>(
                 <SeriesCard Image={item.poster_path} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
               ))}
-          </CarouselDynamic>
+            </Carousel>
         </div>
       </div>
 
@@ -50,23 +38,13 @@ export default function PopularSeries() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl">Popular Cinema</h2>
+        <h2 className=" text-2xl">Popular Series</h2>
         <div>
-          <CarouselDynamic
-          plugins={[
-            'infinite',
-            {
-              resolve: slidesToShowPlugin,
-              options: {
-               numberOfSlides: 6
-              }
-            },
-          ]}
-          >
+              <Carousel>
              {PopularSeries && PopularSeries.map((item)=>(
                 <SeriesCard Image={item.poster_path} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
               ))}
-          </CarouselDynamic>
+              </Carousel>
         </div>
       </div>
       </div>

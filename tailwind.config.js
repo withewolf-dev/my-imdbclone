@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       spacing: {
         
-        'carousel': '50rem',
+        'carousel': '64rem',
+        'wrapper' : '54rem',
+        'dialogWidth' : '44rem',
+        'dialogHeight': '64rem'
       }
     },
   },

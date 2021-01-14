@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import MovieCard from "../../../components/Card/BrowseCard/MovieCard/MovieCard";
-
+import Carousel from '../../../utils/Carousel'
 
 
 
@@ -36,23 +35,13 @@ export default function InCinema() {
         <h2 className=" text-2xl">In Cinema</h2>
         <div>
 
-          {PopularMovies && <CarouselDynamic
-          plugins={[
-            'infinite',
-            {
-              resolve: slidesToShowPlugin, 
-              options: {
-               numberOfSlides: 2
-              }
-            },
-          ]}
-          >
+        <Carousel>
               {PopularMovies.slice(0,10).map((item)=>(
                 <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
               ))}
               
-
-          </CarouselDynamic>}
+              </Carousel>
+        
         </div>
       </div>
 
@@ -64,23 +53,12 @@ export default function InCinema() {
         <div>
 
          
-          {PopularMovies && <CarouselDynamic
-          plugins={[
-            'infinite',
-            {
-              resolve: slidesToShowPlugin,
-              options: {
-               numberOfSlides: 6
-              }
-            },
-          ]}
-          >
+         <Carousel>
               {PopularMovies.slice(0,10).map((item)=>(
                 <MovieCard key={item.id} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
               ))
               }
-      
-          </CarouselDynamic>}
+      </Carousel>
         </div>
       </div>
       </div>
@@ -88,15 +66,3 @@ export default function InCinema() {
   );
 }
 
-const images = [
-
-    "https://images.unsplash.com/photo-1609599372693-7b3ba4b1ab51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609757837816-7ba65c0aaba7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609667372273-eaee47ec404a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609599372693-7b3ba4b1ab51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609757837816-7ba65c0aaba7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609667372273-eaee47ec404a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609599372693-7b3ba4b1ab51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609757837816-7ba65c0aaba7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    "https://images.unsplash.com/photo-1609667372273-eaee47ec404a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-]

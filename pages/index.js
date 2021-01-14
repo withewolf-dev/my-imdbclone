@@ -12,8 +12,12 @@ export default function Home() {
 
   return (
     <>  
-    <div className=" bg-gray-300 h-full py-2">
-      <h1>this is cinema</h1>
+    <div className=" bg-gray-300 flex justify-center h-full py-2 ">
+      <div className="block">
+      <InCinema/>
+      <PopularSeries/>
+      </div>
+      
     </div>
     </>
   );
