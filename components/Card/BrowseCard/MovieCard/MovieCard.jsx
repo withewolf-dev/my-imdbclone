@@ -36,7 +36,7 @@ export default function  MovieCard({ Image, Title, Id, Rating }) {
       {/* <div key={Id} onClick={()=>Router.push(`/movie/${Id}`)}> */}
       <div key={Id} onClick={handleClickOpen}>
             <div className="p-2">
-                <Paper className="h-96 w-48 p-2">
+                <Paper className="h-96 w-48  p-2">
                     <div className="p-1 bg-gray-600">
                         <img
                         src={`http://image.tmdb.org/t/p/original/${Image}`}

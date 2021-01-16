@@ -66,6 +66,8 @@ export default function MovieDialog({ handleClose, Id }) {
     <>
       <div className="overflow-x-hidden no-scrollbar bg-black">
         <div className=" h-dialogHeight">
+          {/* Desktop */}
+          <div className="hidden lg:block">
           <iframe
             width="960"
             height="490"
@@ -74,8 +76,21 @@ export default function MovieDialog({ handleClose, Id }) {
             }`}
             frameBorder="0"
           ></iframe>
+          </div>
+          {/* mobile */}
+          <div className=" visible lg:hidden">
+          <iframe
+            width="360"
+            height="290"
+            src={`https://www.youtube.com/embed/${
+              Trailer && Trailer.map((video) => video.key)
+            }`}
+            frameBorder="0"
+          ></iframe>
+          </div>
+          {/* ---!! ---!! */}
           <DialogContent>
-              <div className="flex space-x-10 text-sm">
+              <div className="flex space-x-5 lg:space-x-10 text-sm">
               <Rating name="size-small" defaultValue={2} size="small" />
 
               <p className="text-gray-200"> {MovieDetails && MovieDetails.vote_average}</p>
@@ -83,11 +98,11 @@ export default function MovieDialog({ handleClose, Id }) {
               <p className="text-gray-200"> {MovieDetails && MovieDetails.runtime} min</p>
               <p className="text-gray-200"> {MovieDetails && MovieDetails.release_date}</p>
               </div>
-            <div class="flex mt-3">
-              <div class="w-3/5">
+            <div class="block lg:flex mt-3">
+              <div class=" lg:w-3/5">
                 {!expanded && (
                   <p className="not-italic text-gray-300  text-lg">
-                    {truncateString(MovieDetails && MovieDetails.overview, 99)}
+                    {truncateString(MovieDetails && MovieDetails.overview, 109)}
                     <div onClick={handleExpandClick}>
                       <ExpandMoreIcon />
                     </div>
@@ -102,33 +117,37 @@ export default function MovieDialog({ handleClose, Id }) {
                   </p>
                 )}
               </div>
-              <div class="w-2/5 text-gray-100 flex justify-end space-x-1">
-                  <div class="block space-y-3">
-                  <div className="flex space-x-2">
-                      <p className="text-gray-400 text-sm">Cast:</p>
+              <div className=" block  mt-2 lg:w-2/5 text-gray-100 lg:flex lg:justify-end space-x-1">
+                  <div className="block  space-y-3 lg:space-y-3">
+                  <div className="flex space-x-2 lg:space-x-2">
+                      <p className="text-gray-400 text-sm " >Cast:</p>
+                      <div className="flex flex-wrap">
                       {FullCast && 
                       FullCast.map((cast)=>(
-                        <p className="text-gray-200 text-sm">{cast.name}</p>
+                        <p className="text-gray-200  text-base lg:text-sm  px-1">{cast.name}</p>
                      )) }
+                     </div>
                   </div>
                   <div className="flex space-x-2">
-                      <p className="text-gray-400 text-sm">Director :</p>
+                      <p className="text-gray-400 text-sm ">Director :</p>
                       {Crew && 
                       Crew.map((director)=>(
-                        <p className="text-gray-200 text-sm">{director.name}</p>
+                        <p className="text-gray-200 text-base lg:text-sm px-1">{director.name}</p>
                      )) }
                   </div>
                   <div className="flex space-x-2">
-                      <p className="text-gray-400 text-sm">Genres :</p>
+                      <p className="text-gray-400 text-sm ">Genres:</p>
+                      <div className="flex flex-wrap ">
                       {MovieDetails && 
                       MovieDetails.genres.map((genre)=>(
-                        <p className="text-gray-200 text-sm">{genre.name}</p>
+                        <p className="text-gray-200 text-base lg:text-sm px-1">{genre.name}</p>
                      )) }
+                     </div>
                   </div>
                   </div>
               </div>
             </div>
-            <p className="text-gray-200 text-4xl mt-3">More Like this</p>
+            <p className="text-gray-200 mt-5 lg:mt-0 text-4xl ">More Like this</p>
 
           </DialogContent>
         </div>

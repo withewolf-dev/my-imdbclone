@@ -8,7 +8,10 @@ module.exports = {
         'carousel': '64rem',
         'wrapper' : '54rem',
         'dialogWidth' : '44rem',
-        'dialogHeight': '64rem'
+        'dialogHeight': '64rem',
+        'mobileWidth': '24rem',
+        'mobileHeight': '17rem',
+        'card':'32rem'
       }
     },
   },

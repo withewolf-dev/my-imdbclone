@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>  
-    <div className=" bg-gray-300 flex justify-center h-full py-2 ">
+    <div className=" bg-gray-300 flex justify-center w-full h-full py-2 ">
       <div className="block">
       <InCinema/>
       <PopularSeries/>

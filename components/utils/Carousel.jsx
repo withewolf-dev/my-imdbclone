@@ -45,11 +45,11 @@ export default function Carousel({children}) {
   );
   return (
     <>
-      <div className="relative w-carousel ">
-        <div className=" flex items-center absolute  inset-y-0 left-0 ">
+      {/* <div className="relative w-mobileHeight lg:w-carousel ">
+        <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
           <span onClick={handleLeftClick}>{arrowLeft}</span>
         </div>
-        <div className="flex items-center absolute  inset-y-0 right-0 ">
+        <div className="hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:right-0 ">
           <span onClick={handleRightclick}>{arrowRight}</span>
         </div>
         <div
@@ -57,6 +57,18 @@ export default function Carousel({children}) {
           className="no-scrollbar flex  overflow-x-scroll w-carousel"
         >
             {children}
+        </div>
+      </div> */}
+
+      <div className=" relative  w-mobileWidth lg:w-carousel">
+        <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
+          <span onClick={handleLeftClick}>{arrowLeft}</span>
+        </div>
+        <div className="hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:right-0 ">
+          <span onClick={handleRightclick}>{arrowRight}</span>
+        </div>
+        <div ref={scroller} className="flex no-scrollbar overflow-x-scroll">
+          {children}
         </div>
       </div>
     </>
