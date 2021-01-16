@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MovieCard from "../../../components/Card/BrowseCard/MovieCard/MovieCard";
-import Carousel from '../../../utils/Carousel'
+import Carousel from '../../../components/utils/Carousel'
 
 
 
