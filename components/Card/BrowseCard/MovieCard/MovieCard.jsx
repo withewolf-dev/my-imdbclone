@@ -10,7 +10,7 @@ import MovieDialog from "../../../Dialog/MovieDialog/MovieDialog";
 export default function  MovieCard({ Image, Title, Id, Rating }) {
 
 
-  console.log(Image, Title);
+  // console.log(Image, Title);
 
   const [open, setOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export default function  MovieCard({ Image, Title, Id, Rating }) {
                 </div>
             </div>
 
-            <Dialog fullWidth="true" maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+            <Dialog fullWidth maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         
         <MovieDialog handleClose={handleClose} Id={Id} />
       </Dialog>

@@ -118,8 +118,8 @@ export default function MovieDialog({ handleClose, Id }) {
                 )}
               </div>
               <div className=" block  mt-2 lg:w-2/5 text-gray-100 lg:flex lg:justify-end space-x-1">
-                  <div className="block  space-y-3 lg:space-y-3">
-                  <div className="flex space-x-2 lg:space-x-2">
+                  <div className="block  space-y-3 ">
+                  <div className="flex space-x-2 ">
                       <p className="text-gray-400 text-sm " >Cast:</p>
                       <div className="flex flex-wrap">
                       {FullCast && 

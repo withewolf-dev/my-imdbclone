@@ -7,7 +7,8 @@ export default function Carousel({children}) {
 
   const handleRightclick = () => {
     // scroller.current.scrollLeft() + 80
-    scroller ? (scroller.current.scrollLeft += 840) : null;
+   scroller ? (scroller.current.scrollLeft += 840) : null;
+    // scroller.current.scrollIntoView({behavior: 'smooth'})
   };
 
   const handleLeftClick = () => {
@@ -45,20 +46,6 @@ export default function Carousel({children}) {
   );
   return (
     <>
-      {/* <div className="relative w-mobileHeight lg:w-carousel ">
-        <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
-          <span onClick={handleLeftClick}>{arrowLeft}</span>
-        </div>
-        <div className="hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:right-0 ">
-          <span onClick={handleRightclick}>{arrowRight}</span>
-        </div>
-        <div
-          ref={scroller}
-          className="no-scrollbar flex  overflow-x-scroll w-carousel"
-        >
-            {children}
-        </div>
-      </div> */}
 
       <div className=" relative  w-mobileWidth lg:w-carousel">
         <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
@@ -74,3 +61,10 @@ export default function Carousel({children}) {
     </>
   );
 }
+
+
+
+
+
+
+

@@ -1,8 +1,11 @@
 import React from 'react'
-
-export default function Layouts() {
+import Header from './Header/Header'
+import HeaderTwo from './Header/HeaderTwo'
+export default function Layouts({children}) {
     return (
         <>
+        <HeaderTwo/>
+        {children}
         </>
     )
 }

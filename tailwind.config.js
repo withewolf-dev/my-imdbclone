@@ -11,7 +11,9 @@ module.exports = {
         'dialogHeight': '64rem',
         'mobileWidth': '24rem',
         'mobileHeight': '17rem',
-        'card':'32rem'
+        'card':'32rem',
+        'search-bar': '50rem',
+        'search-result':'38rem'
       }
     },
   },

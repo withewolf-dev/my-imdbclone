@@ -14,7 +14,7 @@ export default function PopularSeries() {
     
     axios
         .get(`https://api.themoviedb.org/3/tv/popular?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US&page=1`)
-        .then((value) => {console.log(value.data.results); setPopularSeries(value.data && value.data.results)})
+        .then((value) => {console.log(value.data.results,"series"); setPopularSeries(value.data && value.data.results)})
         .catch((error) => {
           console.log(error);
         });
@@ -27,8 +27,8 @@ export default function PopularSeries() {
         <h2 className=" text-2xl">Popular Series</h2>
         <div>
           <Carousel>
-              {PopularSeries && PopularSeries.map((item)=>(
-                <SeriesCard Image={item.poster_path} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
+              {PopularSeries && PopularSeries.map((item,index)=>(
+                <SeriesCard Image={item.poster_path} key={index} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
               ))}
             </Carousel>
         </div>
@@ -41,8 +41,8 @@ export default function PopularSeries() {
         <h2 className=" text-2xl">Popular Series</h2>
         <div>
               <Carousel>
-             {PopularSeries && PopularSeries.map((item)=>(
-                <SeriesCard Image={item.poster_path} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
+             {PopularSeries && PopularSeries.map((item,index)=>(
+                <SeriesCard Image={item.poster_path} Id={item.id} key={index} Title={item.original_name} Rating={item.vote_average}/>
               ))}
               </Carousel>
         </div>

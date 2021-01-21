@@ -45,7 +45,7 @@ export default function SeriesCard({ Image, Title, Id, Rating }) {
                 </div>
             </div>
 
-            <Dialog  fullWidth="true" maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+            <Dialog  fullWidth maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         
         <SeriesDialog handleClose={handleClose} Id={Id}  />
       </Dialog>
