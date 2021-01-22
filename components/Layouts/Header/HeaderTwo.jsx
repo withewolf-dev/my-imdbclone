@@ -1,5 +1,5 @@
 import { Drawer, Menu, MenuItem, Toolbar, Typography } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   ArrowDown,
   Imdb,
@@ -13,7 +13,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import { ArrowBack, ArrowDropDown } from "@material-ui/icons";
 import SearchResults from "../../Search/SearchResults/SearchResults";
 import List from "@material-ui/core/List";
-
+import { StoreContext } from "../../context/Store";
+  
 export default function HeaderTwo() {
   const [IsSearch, setIsSearch] = useState(false);
   const [IsMobileDrawer, setIsMobileDrawer] = useState(false);
@@ -25,7 +26,6 @@ export default function HeaderTwo() {
   const [IsDrawerOpen, setIsDrawerOpen] = useState(false);
   const [open, setOpen] = React.useState(false);
 
-  const [newValue, setnewValue] = useState();
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -50,11 +50,10 @@ export default function HeaderTwo() {
     );
   };
 
-  console.log(newValue,"&&&");
   return (
     <>
       {/* mobile menu  */}
-      <div className="flex justify-between px-3 py-3 lg:hidden">
+      <div className=" bg-nav text-gray-300 flex justify-between px-3 py-3 lg:hidden">
         {!IsSearch && (
           <>
             <ul className="flex items-center space-x-2">
@@ -123,7 +122,7 @@ export default function HeaderTwo() {
 
       {/* desktop menu  */}
       <div className="hidden lg:block">
-        <div className="bg-gray-600 text-white">  
+        <div className=" bg-nav text-white">  
           <Toolbar className=" flex justify-between mx-32 ">
             <Imdb />
             <MenuIcon />
@@ -136,7 +135,7 @@ export default function HeaderTwo() {
               />
               <div className="absolute z-20  top-9 right-24">
                 {SearchTerm !== "" && SearchTerm.length !== 0 && (
-                  <SearchResults category={newValue} Term={SearchTerm} />
+                  <SearchResults Term={SearchTerm} />
                 )}
               </div>
             </div>
@@ -153,16 +152,6 @@ export default function HeaderTwo() {
 }
 
 export const SearchBar = ({ SearchTerm, handleSearch, onChange }) => {
-  const [newValue, setnewValue] = useState();
-
-  useEffect(() => {
-    
-    onChange(newValue);
-
-    
-  }, [newValue])
-
-  console.log(newValue, "....");
 
   return (
     <>
@@ -193,13 +182,14 @@ export const SearchBar = ({ SearchTerm, handleSearch, onChange }) => {
 
 export const DropDownAll = (props) => {
 
+  const [selectedIndex,setSelectedIndex,options] = useContext(StoreContext)
 
-  const options = ["All", "Movies", "Tv Shows", "celebs", "Companies"];
-  const OptionsForApi =["multi","movie","tv","person","company"]
+  // const options = ["All", "Movies", "Tv Shows", "celebs", "Companies"];
+  // const OptionsForApi =["multi","movie","tv","person","company"]
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  // const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
@@ -207,21 +197,14 @@ export const DropDownAll = (props) => {
 
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
-    props.onChange(OptionsForApi[index]);
     setAnchorEl(null);
   };
 
-  async function handleMenuItem (event, index){
-
-   await setSelectedIndex(index);
-   await  props.onChange(OptionsForApi[0]);
-    setAnchorEl(null);
-
-    return
-  }
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  console.log(selectedIndex,"dordown");
 
   return (
     <>
@@ -263,6 +246,7 @@ export const DropDownAll = (props) => {
             {option}
           </MenuItem>
         ))}
+        
       </Menu>
     </>
   );

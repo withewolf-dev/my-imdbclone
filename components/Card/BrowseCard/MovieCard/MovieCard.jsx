@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Router from "next/router";
 import Paper from '@material-ui/core/Paper';
 import Dialog from '@material-ui/core/Dialog';
 
 import MovieDialog from "../../../Dialog/MovieDialog/MovieDialog";
+import { StoreContext } from "../../../context/Store";
+import truncateString from '../../../utils/TruncateString'
 
 
+export default function  MovieCard({ Image, Title, Id, Rating,key_id }) {
 
-export default function  MovieCard({ Image, Title, Id, Rating }) {
 
-
+  const [selectedIndex] = useContext(StoreContext)
   // console.log(Image, Title);
 
   const [open, setOpen] = useState(false);
@@ -23,17 +25,11 @@ export default function  MovieCard({ Image, Title, Id, Rating }) {
     setOpen(false);
   };
 
-  const truncateString=(str, num)=> {
-    if (str.length <= num) {
-      return str
-    }
-    return str.slice(0, num) + '...'
-  }
+  
   
 
   return (
     <>
-      {/* <div key={Id} onClick={()=>Router.push(`/movie/${Id}`)}> */}
       <div key={Id} onClick={handleClickOpen}>
             <div className="p-2">
                 <Paper className="h-96 w-48  p-2">
@@ -47,7 +43,7 @@ export default function  MovieCard({ Image, Title, Id, Rating }) {
                     <div className="space-y-3 bg-gray-600 h-28">
                         <h2>{Rating}</h2>
                         <p>{truncateString(Title,15)}</p>
-                        <p>{Id}</p>
+                     <p>{Id}</p>
                     </div>
                 </Paper>
                 </div>
@@ -55,7 +51,7 @@ export default function  MovieCard({ Image, Title, Id, Rating }) {
 
             <Dialog fullWidth maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         
-        <MovieDialog handleClose={handleClose} Id={Id} />
+        <MovieDialog key_id={key_id} handleClose={handleClose} Id={Id} />
       </Dialog>
     </>
   );

@@ -1,3 +1,5 @@
+const { colors } = require("@material-ui/core");
+
 module.exports = {
   purge: ['./pages/**/*.jsx', './components/**/*.jsx'],
   darkMode: false, // or 'media' or 'class'
@@ -14,7 +16,10 @@ module.exports = {
         'card':'32rem',
         'search-bar': '50rem',
         'search-result':'38rem'
-      }
+      },
+      colors:{
+          nav:"#121212"
+      },
     },
   },
   variants: {

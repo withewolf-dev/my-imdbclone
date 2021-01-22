@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import SeriesDialog from '../../../Dialog/SeriesDialog/SeriesDialog';
 import { Dialog } from '@material-ui/core';
 
-export default function SeriesCard({ Image, Title, Id, Rating }) {
+export default function SeriesCard({ Image, Title, Id, Rating,key_id }) {
 
     const [open, setOpen] = useState(false);
 
@@ -47,7 +47,7 @@ export default function SeriesCard({ Image, Title, Id, Rating }) {
 
             <Dialog  fullWidth maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         
-        <SeriesDialog handleClose={handleClose} Id={Id}  />
+        <SeriesDialog handleClose={handleClose} Id={Id} key_id={key_id}  />
       </Dialog>
         </>
     )

@@ -36,8 +36,8 @@ export default function InCinema() {
         <div>
 
         <Carousel>
-              {PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
+              {PopularMovies.slice(0,10).map((item,index)=>(
+                <MovieCard Image={item.poster_path} key_id={index} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
               ))}
               
               </Carousel>
@@ -54,8 +54,8 @@ export default function InCinema() {
 
          
          <Carousel>
-              {PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard key={item.id} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
+              {PopularMovies.slice(0,10).map((item,index)=>(
+                <MovieCard key={item.id} key_id={index} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
               ))
               }
       </Carousel>

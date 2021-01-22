@@ -28,7 +28,7 @@ export default function PopularSeries() {
         <div>
           <Carousel>
               {PopularSeries && PopularSeries.map((item,index)=>(
-                <SeriesCard Image={item.poster_path} key={index} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
+                <SeriesCard Image={item.poster_path} key={index} key_id={index} Id={item.id} Title={item.original_name} Rating={item.vote_average}/>
               ))}
             </Carousel>
         </div>
@@ -42,7 +42,7 @@ export default function PopularSeries() {
         <div>
               <Carousel>
              {PopularSeries && PopularSeries.map((item,index)=>(
-                <SeriesCard Image={item.poster_path} Id={item.id} key={index} Title={item.original_name} Rating={item.vote_average}/>
+                <SeriesCard Image={item.poster_path} Id={item.id} key={index} key_id={index} Title={item.original_name} Rating={item.vote_average}/>
               ))}
               </Carousel>
         </div>
