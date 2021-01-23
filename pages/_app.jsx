@@ -5,8 +5,9 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import React from "react"
-
-
+import Layouts from "../components/Layouts/Layouts";
+import Theme from '../theme/theme'
+import { StoreProvider } from "../components/context/Store";
 function MyApp({ Component, pageProps }) {
 
   React.useEffect(() => {
@@ -20,8 +21,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <CssBaseline />
-      <Component {...pageProps} />    
+    <StoreProvider>
+    <ThemeProvider theme={Theme}>
+      <Layouts>
+      <Component {...pageProps} />  
+      </Layouts>  
+      </ThemeProvider>
+      </StoreProvider>
     </>
   )
 }

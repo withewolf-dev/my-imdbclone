@@ -1,6 +1,14 @@
 import { Paper } from "@material-ui/core";
 import React, { useRef } from "react";
 import Carousel from "../components/utils/Carousel";
+import 'react-perfect-scrollbar/dist/css/styles.css';
+// import PerfectScrollbar from 'react-perfect-scrollbar'
+import dynamic from 'next/dynamic'
+
+const PerfectScrollbar = dynamic(() =>
+  import('react-perfect-scrollbar')
+)
+
 
 export default function git({ children }) {
   const scroller = useRef();
@@ -45,15 +53,79 @@ export default function git({ children }) {
   );
   return (
     <>
-      {/* <div className=" relative  w-mobileWidth lg:w-carousel">
-      <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
+    <PerfectScrollbar>
+    <div className=" relative  w-mobileWidth lg:w-carousel">
+        <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
           <span onClick={handleLeftClick}>{arrowLeft}</span>
         </div>
         <div className="hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:right-0 ">
           <span onClick={handleRightclick}>{arrowRight}</span>
         </div>
-        <div className="flex no-scrollbar overflow-x-scroll">
-         
+        <div ref={scroller} className="flex no-scrollbar overflow-x-scroll">
+        <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
+          <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
+          <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
+          <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
           <div className="p-1">
             <Paper className="h-96 w-48  p-1">
               <div className="p-1 bg-gray-600">
@@ -118,7 +190,6 @@ export default function git({ children }) {
               </div>
             </Paper>
           </div>
-
           <div className="p-1">
             <Paper className="h-96 w-48  p-1">
               <div className="p-1 bg-gray-600">
@@ -146,208 +217,46 @@ export default function git({ children }) {
               </div>
               <div className="space-y-3 bg-gray-600 h-28">
                 <h2>Rating</h2>
-                <p>Titile</p>
-                <p>id</p>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
+          <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
+              </div>
+            </Paper>
+          </div>
+          <div className="p-1">
+            <Paper className="h-96 w-48  p-1">
+              <div className="p-1 bg-gray-600">
+                <img
+                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+                  alt="title"
+                  className="h-64 p-1"
+                />
+              </div>
+              <div className="space-y-3 bg-gray-600 h-28">
+                <h2>Rating</h2>
+                <p>title</p>
+                <p>title</p>
               </div>
             </Paper>
           </div>
         </div>
-      </div> */}
-
-      <Carousel>
-      <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-          <div className="p-1">
-            <Paper className="h-96 w-48  p-1">
-              <div className="p-1 bg-gray-600">
-                <img
-                  src="https://images.unsplash.com/photo-1610616919576-ba52cd578baa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                  alt="title"
-                  className="h-64 p-1"
-                />
-              </div>
-              <div className="space-y-3 bg-gray-600 h-28">
-                <h2>Rating</h2>
-                <p>title</p>
-                <p>title</p>
-              </div>
-            </Paper>
-          </div>
-      </Carousel>
+      </div>
+      </PerfectScrollbar>
     </>
   );
 }

@@ -8,8 +8,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import axios from "axios";
 import Rating from '@material-ui/lab/Rating';
+import InSimilar from "../../Browse/Similar/InSimilar";
 
-export default function MovieDialog({ handleClose, Id }) {
+export default function MovieDialog({ handleClose, Id,key_id }) {
 
   const [expanded, setExpanded] = useState(false);
 
@@ -63,7 +64,7 @@ export default function MovieDialog({ handleClose, Id }) {
   console.log(MovieDetails);
 
   return (
-    <>
+    <React.Fragment key={key_id}>
       <div className="overflow-x-hidden no-scrollbar bg-black">
         <div className=" h-dialogHeight">
           {/* Desktop */}
@@ -118,8 +119,8 @@ export default function MovieDialog({ handleClose, Id }) {
                 )}
               </div>
               <div className=" block  mt-2 lg:w-2/5 text-gray-100 lg:flex lg:justify-end space-x-1">
-                  <div className="block  space-y-3 lg:space-y-3">
-                  <div className="flex space-x-2 lg:space-x-2">
+                  <div className="block  space-y-3 ">
+                  <div className="flex space-x-2 ">
                       <p className="text-gray-400 text-sm " >Cast:</p>
                       <div className="flex flex-wrap">
                       {FullCast && 
@@ -148,11 +149,11 @@ export default function MovieDialog({ handleClose, Id }) {
               </div>
             </div>
             <p className="text-gray-200 mt-5 lg:mt-0 text-4xl ">More Like this</p>
-
+            <InSimilar key={key_id} name={movieDetails && movieDetails.original_title} Id={Id}/>
           </DialogContent>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

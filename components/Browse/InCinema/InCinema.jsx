@@ -32,12 +32,12 @@ export default function InCinema() {
     <>
     {/* mobile */}
       <div className="px-2 lg:hidden">
-        <h2 className=" text-2xl">In Cinema</h2>
+        <h2 className=" text-2xl text-yellow-400">In Cinema</h2>
         <div>
 
         <Carousel>
-              {PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
+              {PopularMovies.slice(0,10).map((item,index)=>(
+                <MovieCard Image={item.poster_path} key_id={index} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
               ))}
               
               </Carousel>
@@ -49,13 +49,13 @@ export default function InCinema() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl">In Cinema</h2>
+        <h2 className=" text-2xl text-yellow-400">In Cinema</h2>
         <div>
 
          
          <Carousel>
-              {PopularMovies.slice(0,10).map((item)=>(
-                <MovieCard key={item.id} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
+              {PopularMovies.slice(0,10).map((item,index)=>(
+                <MovieCard key={item.id} key_id={index} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
               ))
               }
       </Carousel>

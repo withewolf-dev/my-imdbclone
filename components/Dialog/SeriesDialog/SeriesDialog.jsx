@@ -8,9 +8,9 @@ import axios from 'axios'
 import Rating from '@material-ui/lab/Rating';
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import InSimilarSeries from '../../Browse/Similar/InSimilarSeries'
 
-
-export default function SeriesDialog({handleClose,Id}) {
+export default function SeriesDialog({handleClose,Id,key_id}) {
 
 
   const [expanded, setExpanded] = useState(false)
@@ -66,7 +66,7 @@ export default function SeriesDialog({handleClose,Id}) {
 
       
     return (
-      <>
+      <React.Fragment key={Id}>
         <div className="overflow-x-hidden no-scrollbar bg-black">
           <div className=" h-dialogHeight">
             {/* Desktop */}
@@ -166,9 +166,10 @@ export default function SeriesDialog({handleClose,Id}) {
                 </div>
               </div>
               <p className="text-gray-200 text-4xl mt-3">More Like this</p>
+              <InSimilarSeries Id={Id} key={key_id}/>
             </DialogContent>
           </div>
         </div>
-      </>
+      </React.Fragment>
     );
 }
