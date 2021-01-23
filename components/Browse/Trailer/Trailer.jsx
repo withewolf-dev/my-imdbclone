@@ -1,40 +1,55 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import TrailerCard from "../../Card/BrowseCard/TrailerCard/TrailerCard";
-import dynamic from 'next/dynamic'
-
-
-
+import dynamic from "next/dynamic";
+import { TrailerCarousel } from "../../utils/Carousel";
 
 export default function Trailer() {
+  const [comingSoon, setComingSoon] = useState();
 
-    const [comingSoon, setComingSoon] = useState()
-    const [disableFetching, setdisableFetching] = useState()
-
-    
-
-      
-     
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US&page=1`
+      )
+      .then((value) => {
+        setComingSoon(value.data.results.slice(4, 8));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-    <div>
-
-  
-
-      <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-        <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-       
-        <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-      
-      </div>
+      <TrailerCarousel>
+        {comingSoon && comingSoon.map((movie) => <TrailerCard Id={movie.id} />)}
+      </TrailerCarousel>
     </>
   );
 }
 
+export const TrailerCard = (Id) => {
+  const [trailer, settrailer] = useState();
 
-
-        {/* <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-        <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-       
-        <img src="https://images.unsplash.com/photo-1609850092631-888fc0e3b7bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" /> */}
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${Id.Id}/videos?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US`
+      )
+      .then((value) => {
+        console.log(value.data.results, "trailer");
+         value.data && settrailer(value.data.results.filter((result) => result.type === "Trailer"));
+      });
+  }, [Id.Id]);
+  return (
+    <>
+    <div>
+      <iframe
+        className="p-2 w-trailer-carousel h-trailer-carousel-h "
+        src={`https://www.youtube.com/embed/${trailer && trailer.map((video)=>video.key)}`}
+        frameBorder="0"
+      ></iframe>
+      </div>
+    </>
+  );
+};

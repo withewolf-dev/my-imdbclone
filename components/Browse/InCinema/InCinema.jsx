@@ -32,7 +32,7 @@ export default function InCinema() {
     <>
     {/* mobile */}
       <div className="px-2 lg:hidden">
-        <h2 className=" text-2xl">In Cinema</h2>
+        <h2 className=" text-2xl text-yellow-400">In Cinema</h2>
         <div>
 
         <Carousel>
@@ -49,7 +49,7 @@ export default function InCinema() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl">In Cinema</h2>
+        <h2 className=" text-2xl text-yellow-400">In Cinema</h2>
         <div>
 
          

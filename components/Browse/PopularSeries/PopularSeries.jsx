@@ -24,7 +24,7 @@ export default function PopularSeries() {
     <>
     {/* mobile */}
       <div className="px-2 lg:hidden">
-        <h2 className=" text-2xl">Popular Series</h2>
+        <h2 className=" text-2xl text-yellow-400">Popular Series</h2>
         <div>
           <Carousel>
               {PopularSeries && PopularSeries.map((item,index)=>(
@@ -38,7 +38,7 @@ export default function PopularSeries() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl">Popular Series</h2>
+        <h2 className=" text-2xl text-yellow-400">Popular Series</h2>
         <div>
               <Carousel>
              {PopularSeries && PopularSeries.map((item,index)=>(

@@ -13,7 +13,8 @@ export default function Home() {
     <>  
     <div className=" bg-black  flex justify-center w-full h-full py-2 ">
       <div className="block ">
-        <Poster/>
+      <Poster/>
+      <Trailer/>
       <InCinema/>
       <PopularSeries/>
       </div>
