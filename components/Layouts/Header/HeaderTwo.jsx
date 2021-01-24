@@ -14,6 +14,7 @@ import { ArrowBack, ArrowDropDown } from "@material-ui/icons";
 import SearchResults from "../../Search/SearchResults/SearchResults";
 import List from "@material-ui/core/List";
 import { StoreContext } from "../../context/Store";
+import BurgerMenu from "../../BurgerMenu/BurgerMenu";
   
 export default function HeaderTwo() {
   const [IsSearch, setIsSearch] = useState(false);
@@ -41,7 +42,7 @@ export default function HeaderTwo() {
 
   const MenuDrawer = () => {
     return (
-      <div className="flex items-center">
+      <div onClick={()=>setIsDrawerOpen(true)} className="flex items-center">
         <div>
           <MenuIconMi />
         </div>
@@ -125,7 +126,7 @@ export default function HeaderTwo() {
         <div className=" bg-nav text-white">  
           <Toolbar className=" flex justify-between mx-32 ">
             <Imdb />
-            <MenuIcon />
+            <MenuDrawer />
 
             <div className="relative">
               <SearchBar
@@ -147,9 +148,17 @@ export default function HeaderTwo() {
           </Toolbar>
         </div>
       </div>
+
+      <Drawer anchor="top" open={IsDrawerOpen} onClose={()=>setIsDrawerOpen(false)}>
+            <BurgerMenu setIsDrawerOpen={setIsDrawerOpen}/>
+          </Drawer>
     </>
+    
   );
 }
+
+
+
 
 export const SearchBar = ({ SearchTerm, handleSearch, onChange }) => {
 
@@ -184,12 +193,8 @@ export const DropDownAll = (props) => {
 
   const [selectedIndex,setSelectedIndex,options] = useContext(StoreContext)
 
-  // const options = ["All", "Movies", "Tv Shows", "celebs", "Companies"];
-  // const OptionsForApi =["multi","movie","tv","person","company"]
-
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  // const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);

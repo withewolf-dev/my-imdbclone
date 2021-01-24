@@ -5,18 +5,18 @@ import Carousel from '../../../components/utils/Carousel'
 
 
 
-export default function InCinema() {
+export default function TopRated() {
 
 
-  const [PopularMovies, setPopularMovies] = useState([])
+  const [TopRated, setTopRated] = useState([])
   const [init, setInit] = useState(false)
   
   useEffect(() => {
       if (!init) {
         axios
-        .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=887fe191590495414ef3ba59578e4a8b&language=en-us&page=1`)
+        .get(`https://api.themoviedb.org/3/movie/top_rated?api_key=887fe191590495414ef3ba59578e4a8b&language=en-US&page=1`)
         .then((value) => {
-          value.data && setPopularMovies([...value.data.results])
+          value.data && setTopRated([...value.data.results])
           setInit(true)
          })
         .catch((error) => {
@@ -26,17 +26,17 @@ export default function InCinema() {
       }
     });
 
-    console.log(PopularMovies,"popmov");
+    console.log(TopRated,"popmov");
 
   return (
     <>
     {/* mobile */}
       <div className="px-2 lg:hidden">
-        <h2 className=" text-2xl text-yellow-400">Now Playing</h2>
+        <h2 className=" text-2xl text-yellow-400">Top Rated</h2>
         <div>
 
         <Carousel>
-              {PopularMovies.slice(0,10).map((item,index)=>(
+              {TopRated.slice(0,10).map((item,index)=>(
                 <MovieCard Image={item.poster_path} key_id={index} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
               ))}
               
@@ -49,12 +49,12 @@ export default function InCinema() {
     {/* Desktop */}
       <div className="hidden lg:block">
       <div className="px-2">
-        <h2 className=" text-2xl text-yellow-400">Now Playing</h2>
+        <h2 className=" text-2xl text-yellow-400">Top Rated</h2>
         <div>
 
          
          <Carousel>
-              {PopularMovies.slice(0,10).map((item,index)=>(
+              {TopRated.slice(0,10).map((item,index)=>(
                 <MovieCard key={item.id} key_id={index} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
               ))
               }
