@@ -116,7 +116,7 @@ export const TrailerCarousel =({children})=>{
   );
   return (
     <>
-      <div className=" relative w-trailer-carousel bg-black">
+      <div className=" relative w-trailer-carousel-t lg:w-trailer-carousel bg-black">
       <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
           <span className="bg-nav cursor-pointer  rounded-sm opacity-70 px-3 py-4 border-2 border-white" onClick={handleLeftClick}> {arrowLeft}</span>
         </div>

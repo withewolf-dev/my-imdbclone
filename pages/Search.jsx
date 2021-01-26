@@ -46,25 +46,7 @@ export default function Carousel({children}) {
   );
   return (
     <>
-
-      {/* <div className=" relative  w-mobileWidth lg:w-dialogWidth lg:h-wrapper">
-        <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
-          <span onClick={handleLeftClick}>{arrowLeft}</span>
-        </div>
-        <div className="hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:right-0 ">
-          <span onClick={handleRightclick}>{arrowRight}</span>
-        </div>
-        <div ref={scroller} className="flex no-scrollbar overflow-x-scroll">
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/t1nFAMws5FI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/t1nFAMws5FI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/t1nFAMws5FI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
-        <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/Fnlnw8uY6jo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       <iframe width="960" className="p-2" height="515" src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div> */}
-      <div className=" relative w-trailer-carousel bg-gray-600">
+      <div className=" relative w-trailer-carousel-t bg-gray-600">
       <div className=" hidden lg:flex lg:items-center lg:absolute  lg:inset-y-0 lg:left-0 ">
           <span onClick={handleLeftClick}>{arrowLeft}</span>
         </div>
@@ -89,11 +71,11 @@ export default function Carousel({children}) {
 
 
 const video = [
-  <iframe className="p-2 w-trailer-carousel h-trailer-carousel-h "  src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
-  <iframe  className="p-2 w-trailer-carousel h-trailer-carousel-h " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
-  <iframe  className="p-2 w-trailer-carousel h-trailer-carousel-h " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
-  <iframe  className="p-2 w-trailer-carousel h-trailer-carousel-h " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
-  <iframe  className="p-2 w-trailer-carousel  h-trailer-carousel-h" src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+  <iframe className="p-2 w-trailer-carousel-t h-trailer-carousel-h-t "  src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+  <iframe  className="p-2 w-trailer-carousel-t h-trailer-carousel-h-t " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+  <iframe  className="p-2 w-trailer-carousel-t h-trailer-carousel-h-t " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+  <iframe  className="p-2 w-trailer-carousel-t h-trailer-carousel-h-t " src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+  <iframe  className="p-2 w-trailer-carousel-t  h-trailer-carousel-h-t" src="https://www.youtube.com/embed/OvM4hIxrqAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
 ]
 
 
