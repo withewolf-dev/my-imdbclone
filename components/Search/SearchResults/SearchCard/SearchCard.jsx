@@ -30,16 +30,16 @@ export default function SearchCard({Id,Img,overview,title,media}) {
 
     return (
        <>
-       <div  key={Id} onClick={handleClickOpen} className="flex justify-center ">
+       <div  key={Id} onClick={handleClickOpen} className="flex justify-center bg-nav">
             
-            <div className="flex   shadow-lg rounded-sm my-2  bg-gray-400 w-96">
+            <div className="flex   shadow-lg rounded-sm my-2  bg-card w-96">
               <img
                 src={`http://image.tmdb.org/t/p/original/${Img}`}
                 className=" h-28 rounded-l-sm"
               />
               <div>
-                 <h1 className="px-2 text-xl mb-2 ">{title}</h1>
-                <p className="text-gray-700 whitespace-normal text-sm px-2">{truncateString(overview,70)}</p>
+                 <h1 className="px-2 text-xl mb-2  text-gray-100">{title}</h1>
+                <p className="text-gray-300 whitespace-normal text-sm px-2">{truncateString(overview,70)}</p>
               </div>
             </div>
             </div>

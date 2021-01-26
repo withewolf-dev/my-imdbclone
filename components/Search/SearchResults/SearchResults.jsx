@@ -3,6 +3,7 @@ import axios from "axios";
 import { Dialog, Paper } from "@material-ui/core";
 import SearchCard from "./SearchCard/SearchCard";
 import { StoreContext } from "../../context/Store";
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 export default function SearchResults({ Term }) {
@@ -33,14 +34,25 @@ export default function SearchResults({ Term }) {
 
   return (
     <>
-    <Paper elevation={2} className=" w-72 lg:w-search-result h-96  overflow-x-auto ">
-      {!results && <h1>Loading</h1>}
+    <div className=" w-72  lg:w-search-result h-96  overflow-x-auto ">
+      {!results && <LoadingResult/>}
+
       {results &&
         results.map((term,index) => (
           <SearchCard Id ={term.id} media={term.media_type} Img={term.poster_path} key={index} overview={term.overview} title = {term.original_title || term.original_name}/> 
         ))}
-        </Paper>
+        </div>
   
     </>
   );
+}
+
+export const LoadingResult =()=>{
+  return(
+    <>
+    <div className="bg-card h-64">
+    <LinearProgress/>
+    </div>
+    </>
+  )
 }
