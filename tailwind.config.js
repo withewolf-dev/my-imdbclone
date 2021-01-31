@@ -19,7 +19,8 @@ module.exports = {
         'trailer-carousel': '54rem',
         'trailer-carousel-h':'34rem',
         'trailer-carousel-t': '24rem',
-        'trailer-carousel-h-t':'24rem'
+        'trailer-carousel-h-t':'24rem',
+        'search-bar-m':'22rem'
       },
       colors:{
           nav:"#121212",

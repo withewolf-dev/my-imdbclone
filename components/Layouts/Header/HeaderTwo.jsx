@@ -15,6 +15,7 @@ import SearchResults from "../../Search/SearchResults/SearchResults";
 import List from "@material-ui/core/List";
 import { StoreContext } from "../../context/Store";
 import BurgerMenu from "../../BurgerMenu/BurgerMenu";
+import BurgerMenuMobile from "../../BurgerMenu/BurgerMenuMobile";
   
 export default function HeaderTwo() {
   const [IsSearch, setIsSearch] = useState(false);
@@ -91,7 +92,7 @@ export default function HeaderTwo() {
         )}
 
         {IsSearch && (
-          <div className="relative flex">
+          <div className="flex space-x-2">
             <SearchBar
               onChange={(value) => setnewValue(value)}
               SearchTerm={SearchTerm}
@@ -109,16 +110,15 @@ export default function HeaderTwo() {
         )}
       </div>
       <Drawer
+
         anchor="left"
         open={IsMobileDrawer}
         onClose={() => {
           setIsMobileDrawer(false);
         }}
+
       >
-        <ul>
-          <li>name</li>
-          <li>age</li>
-        </ul>
+        <BurgerMenuMobile setIsMobileDrawer={setIsMobileDrawer}/>
       </Drawer>
 
       {/* desktop menu  */}
@@ -144,7 +144,7 @@ export default function HeaderTwo() {
             <ImdbPro />
             <WatchlistIcon />
 
-            <Typography variant="h9">Sign In</Typography>
+            <Typography variant="h6">Sign In</Typography>
           </Toolbar>
         </div>
       </div>
@@ -164,7 +164,7 @@ export const SearchBar = ({ SearchTerm, handleSearch, onChange }) => {
 
   return (
     <>
-      <div className="box  w-96 lg:w-search-bar ">
+      <div className="box  w-search-bar-m lg:w-search-bar ">
         <div className="box-wrapper ">
           <div className=" bg-gray-200 rounded flex items-center  h-8 p-1 ">
             <div className="hidden lg:block">

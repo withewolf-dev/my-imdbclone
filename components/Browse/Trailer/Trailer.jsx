@@ -24,7 +24,7 @@ export default function Trailer() {
   return (
     <>
     <TrailerCarousel>
-        {comingSoon && comingSoon.map((movie) => <TrailerCard Id={movie.id} title={movie.original_title} poster={movie.poster_path} />
+        {comingSoon && comingSoon.map((movie) => <TrailerCard Id={movie.id} key={movie.id} title={movie.original_title} poster={movie.poster_path} />
         )}        
       </TrailerCarousel>
       
@@ -48,9 +48,6 @@ export const TrailerCard = ({Id,title,poster}) => {
       });
   }, [Id && Id]);
 
-  // console.log(trailer && trailer[0],"trailer");
-  // console.log(title);
-  // console.log(Id && Id,"trailer Id");
   return (
     <>
     <div>
