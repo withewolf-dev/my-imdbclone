@@ -35,9 +35,7 @@ export const MenuIcon = ()=>{
     <div className="flex items-center text-gray-200 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        // width="24"
-        // height="24"
-        //class="ipc-icon ipc-icon--menu ipc-button__icon ipc-button__icon--pre"
+
         viewBox="0 0 24 24"
         fill="currentColor"
         role="presentation"
@@ -104,7 +102,6 @@ export const WatchlistIcon = ()=>{
     width="24"
     height="24"
     xmlns="http://www.w3.org/2000/svg"
-    class="ipc-icon ipc-icon--watchlist ipc-button__icon ipc-button__icon--pre"
     viewBox="0 0 24 24"
     fill="currentColor"
     role="presentation"

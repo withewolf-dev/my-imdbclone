@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Paper } from "@material-ui/core";
+import truncateString from '../../utils/TruncateString'
 
 export default function InSimilar({ Id,name }) {
   const [similar, setSimilar] = useState();
 
-  const truncateString = (str, num) => {
-    if (str && str.length <= num) {
-      return str;
-    }
-    return str && str.slice(0, num) + "...";
-  };
 
   useEffect(() => {
     axios
@@ -25,7 +20,7 @@ export default function InSimilar({ Id,name }) {
 
   return (
     <>
-      <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class=" block mt-4 space-y-4 lg:grid lg:grid-cols-3 lg:gap-4 lg:mt-4">
         {similar &&
           similar.map((movie) => (
             <Paper key={name}>
