@@ -173,7 +173,7 @@ export const SearchBar = ({ SearchTerm, handleSearch, onChange }) => {
 
             <input
               type="search"
-              placeholder="search for images"
+              placeholder="search for movies & series"
               value={SearchTerm}
               onChange={handleSearch}
               className=" w-full text-gray-600 text-sm lg:pl-2 outline-none focus:outline-none bg-transparent"

@@ -1,15 +1,12 @@
-import React, { useContext, useState } from "react";
-import Router from "next/router";
-import Paper from "@material-ui/core/Paper";
+import React, { useState } from "react";
 import Dialog from "@material-ui/core/Dialog";
-
 import MovieDialog from "../../../Dialog/MovieDialog/MovieDialog";
-import { StoreContext } from "../../../context/Store";
 import truncateString from "../../../utils/TruncateString";
 import { Star } from "@material-ui/icons";
 import { yellow } from "@material-ui/core/colors";
 
-export default function MovieCard({ Image, Title, Id, Rating, key_id }) {
+
+export default function MovieCard({ movie,Image, Title, Id, Rating, key_id }) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -39,6 +36,8 @@ export default function MovieCard({ Image, Title, Id, Rating, key_id }) {
 
   return (
     <>
+    {movie && <h1 className="text-white bg-gray-300 h-96"> loading </h1>}
+    {!movie && 
       <div key={Id} onClick={handleClickOpen} className="p-2">
         <div className=" bg-card shadow-lg rounded-sm w-48  ">
           <img
@@ -67,7 +66,7 @@ export default function MovieCard({ Image, Title, Id, Rating, key_id }) {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
 
       <Dialog
         fullWidth
