@@ -4,7 +4,6 @@ import MovieCard from "../../../components/Card/BrowseCard/MovieCard/MovieCard";
 import Carousel from '../../../components/utils/Carousel'
 
 
-
 export default function InCinema() {
 
 
@@ -26,43 +25,58 @@ export default function InCinema() {
       }
     });
 
-    console.log(PopularMovies,"popmov");
 
   return (
     <>
-    {/* mobile */}
+      {/* mobile */}
       <div className="px-2 lg:hidden">
         <h2 className=" text-2xl text-yellow-400">Now Playing</h2>
         <div>
-
-        <Carousel>
-              {PopularMovies.slice(0,10).map((item,index)=>(
-                <MovieCard Image={item.poster_path} key_id={index} Title={item.original_title} Id={item.id} Rating={item.vote_average} key={item.id}/>
-              ))}
+          <Carousel>
+            {PopularMovies.slice(0, 10).map((item, index) => (
+            <MovieCard
+                Image={item.poster_path}
+                key_id={index}
+                Title={item.original_title}
+                Id={item.id}
+                Rating={item.vote_average}
+                key={item.id}
+              />
               
-              </Carousel>
-        
+            ))}
+          </Carousel>
         </div>
       </div>
 
-
-    {/* Desktop */}
+      {/* Desktop */}
       <div className="hidden lg:block">
-      <div className="px-2">
-        <h2 className=" text-2xl text-yellow-400">Now Playing</h2>
-        <div>
-
-         
-         <Carousel>
-              {PopularMovies.slice(0,10).map((item,index)=>(
-                <MovieCard key={item.id} key_id={index} Image={item.poster_path} Title={item.original_title} Id={item.id} Rating={item.vote_average}/>
-              ))
-              }
-      </Carousel>
+        <div className="px-2">
+          <h2 className=" text-2xl text-yellow-400">Now Playing</h2>
+          <div>
+            <Carousel>
+              {PopularMovies.slice(0, 10).map((item, index) => (
+                <MovieCard
+                  movie={item}
+                  key={item.id}
+                  key_id={index}
+                  Image={item.poster_path}
+                  Title={item.original_title}
+                  Id={item.id}
+                  Rating={item.vote_average}
+                />
+              ))}
+            </Carousel>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );
 }
 
+export const Loading=()=>{
+  return(
+    <div className="bg-gray-200 h-96 w-60">
+          <h1>asdsad</h1>
+        </div>
+  )
+}

@@ -23,7 +23,7 @@ export default function InSimilarSeries({ Id }) {
       .catch((error) => console.log(error));
   }, [Id]);
   return <>
-    <div class="grid grid-cols-3 gap-4 mt-4">
+    <div class="block  space-y-2 lg:grid lg:grid-cols-3 lg:gap-4 lg:mt-4">
     { similar && 
     similar.map((series)=>(
       <Paper>

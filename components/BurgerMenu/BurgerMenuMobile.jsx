@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from "@material-ui/core";
 import {grey} from '@material-ui/core/colors';
+import Link from 'next/link'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -58,8 +59,11 @@ export default function BurgerMenuMobile({ setIsMobileDrawer }) {
               <div className="text-gray-300 text-lg flex space-x-2 mr-10"><span>{menu.icons}</span><span>{menu.title}</span></div>
             </AccordionSummary>
             {menu.items.map((item)=>(
-            <AccordionDetails className="text-gray-200  text-base mx-8">
-                {item}
+            <AccordionDetails className="text-gray-200  text-base mx-8" >
+              <Link href="/ErrorNoinfo">
+              {item}
+              </Link>
+                
             </AccordionDetails>
             ))}            
           </Accordion>

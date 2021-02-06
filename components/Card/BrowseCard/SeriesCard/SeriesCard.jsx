@@ -49,7 +49,7 @@ export default function SeriesCard({ Image, Title, Id, Rating, key_id }) {
             </div>
             <div className="space-y-4">
               <div className="text-gray-300 hover:underline">
-                {truncateString(Title, 15)}{" "}
+                {truncateString(Title, 10)}{" "}
               </div>
               <div className="space-y-4">
                 <div className="bg-gray-800 rounded-sm p-2 hover:bg-gray-700  flex justify-center">
