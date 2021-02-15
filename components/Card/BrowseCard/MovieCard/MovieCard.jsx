@@ -36,8 +36,7 @@ export default function MovieCard({ movie,Image, Title, Id, Rating, key_id }) {
 
   return (
     <>
-    {movie && <h1 className="text-white bg-gray-300 h-96"> loading </h1>}
-    {!movie && 
+     
       <div key={Id} onClick={handleClickOpen} className="p-2">
         <div className=" bg-card shadow-lg rounded-sm w-48  ">
           <img
@@ -66,7 +65,7 @@ export default function MovieCard({ movie,Image, Title, Id, Rating, key_id }) {
             </div>
           </div>
         </div>
-      </div>}
+      </div>
 
       <Dialog
         fullWidth
